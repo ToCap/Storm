@@ -27,7 +27,15 @@ def process_file(name, size, files_dict, connector, translator, mcap):
 
     previous = files_dict[name]
 
-    if size > 0 and size != previous["size"]:
+    mode = connector.is_append_mode()
+
+    # determine if file is changed
+    is_changed = True
+    if connector.is_append_mode():
+        is_changed = (size != previous["size"])
+
+
+    if  size > 0 and is_changed:
         print(f"🆕 File modified: {name}")
         content = connector.read_file(f"prjs/{name}")
         tag = hash(content)
@@ -53,6 +61,7 @@ def main():
 
     files_dict = {}
 
+    mode = connector.is_append_mode()
    
     try:
         while True:

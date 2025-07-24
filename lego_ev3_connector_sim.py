@@ -34,6 +34,16 @@ class MindstormEv3ConnectorSIM(MindstormEv3Connector):
 
     def __init__(self, port, baudrate):
         pass
+
+    def is_append_mode(self) -> bool:
+        """
+        Determines whether the specified file is being written in append mode.
+
+        :param file_path: Path to the file
+        :return: True if append mode is assumed, False otherwise
+        """
+        return False
+
     
     def list_files(self, pattern="prjs/*.txt"):
 

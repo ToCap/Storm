@@ -38,6 +38,15 @@ class MindstormEv3ConnectorUSB(MindstormEv3Connector):
             self.ser = serial.Serial(port, baudrate, timeout=1)
         else:
             self.isDebug = True
+
+    def is_append_mode(self) -> bool:
+        """
+        Determines whether the specified file is being written in append mode.
+
+        :param file_path: Path to the file
+        :return: True if append mode is assumed, False otherwise
+        """
+        return True
     
 
     def list_files(self, pattern="prjs/*.txt") -> list[tuple[str, int]]:
