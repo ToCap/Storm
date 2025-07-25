@@ -10,11 +10,11 @@
 
 ## 📈 Model Documentations
 
-- 🧩 [Block Definition Diagram (BDD)](definition block diagram.md)  
+- 🧩 [Block Definition Diagram (BDD)](diagram/definition_block_diagram.md)  
   > 💡 **Limitations on block definition diagram:**  
   > SysML stereotypes and properties are simplified and represented using basic Mermaid `class` syntax as Mermaid does not support SysML-specific distinctions between `class` vs `DataType` vs `Block`    
 
-- 🔄 [Main Sequence Diagram](sequence_diagram.md)  
+- 🔄 [Main Sequence Diagram](diagram/sequence_diagram.md)  
   > 💡 **Limitations on sequence diagram:**  
   > - The *lifelines*, *parts*, *blocks*, and *signals* are not clearly distinguished as Mermaid does not support blocks or signal events explicitly  
   > - No hierarchical structures (e.g., `Block:ConnectorFactory`) as Mermaid does not allow typing
